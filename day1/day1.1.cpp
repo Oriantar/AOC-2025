@@ -6,10 +6,11 @@ using namespace std;
 int main(){
 	int starting_number = 50;
 	int count = 0;
-	char left = 'L';
+	string inputFile = "input.txt"
+
 	list<string> input = {};
-	list<int> test = {};
-	ifstream f("input.txt");
+
+	ifstream f(inputFile);
 
     if (!f.is_open()) {
         cerr << "Error opening the file!";
@@ -39,11 +40,8 @@ int main(){
 			temp = to_string(abs(starting_number))[0];
 			starting_number = starting_number - (stoi(temp)*100);
 		}
-		cout << starting_number << endl;
 		if(starting_number == 0) count += 1;
 	}
-
-	cout << "" << endl;
 	cout << count << endl;
 	
 }
